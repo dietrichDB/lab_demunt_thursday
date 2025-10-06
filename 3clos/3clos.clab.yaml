@@ -6,13 +6,13 @@ topology:
       image: ghcr.io/hellt/network-multitool
   nodes:
     leaf1:
-      kind: arista_eos
+      kind: arista_ceos
       image: ceos:4.34.2F
     leaf2:
-      kind: arista_eos
+      kind: arista_ceos
       image: ceos:4.34.2F
     spine:
-      kind: arista_eos
+      kind: arista_ceos
       image: ceos:4.34.2F
     client1:
       kind: linux
