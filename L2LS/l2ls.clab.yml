@@ -13,33 +13,33 @@ topology:
     # Spines
     spine1:
       kind: ceos
-      mgmt-ipv4: 172.100.100.101/24
+      mgmt-ipv4: 172.100.100.101
       image: ceos:4.34.2F
       group: spine
     spine2:
       kind: ceos
-      mgmt-ipv4: 172.100.100.102/24
+      mgmt-ipv4: 172.100.100.102
       image: ceos:4.34.2F
       group: spine
     # Leafs
     leaf1:
       kind: ceos
-      mgmt-ipv4: 172.100.100.105/24
+      mgmt-ipv4: 172.100.100.105
       image: ceos:4.34.2F
       group: spine
     leaf2:
       kind: ceos
-      mgmt-ipv4: 172.100.100.106/24
+      mgmt-ipv4: 172.100.100.106
       image: ceos:4.34.2F
       group: spine
     leaf3:
       kind: ceos
-      mgmt-ipv4: 172.100.100.107/24
+      mgmt-ipv4: 172.100.100.107
       image: ceos:4.34.2F
       group: spine
     leaf4:
       kind: ceos
-      mgmt-ipv4: 172.100.100.108/24
+      mgmt-ipv4: 172.100.100.108
       image: ceos:4.34.2F
       group: spine
     hostA:
