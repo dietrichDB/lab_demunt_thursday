@@ -37,7 +37,7 @@ topology:
       mgmt-ipv4: 172.100.100.107/24
       image: ceos:4.34.2F
       group: spine
-  leaf4:
+    leaf4:
       kind: ceos
       mgmt-ipv4: 172.100.100.108/24
       image: ceos:4.34.2F
