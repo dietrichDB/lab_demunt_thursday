@@ -48,6 +48,6 @@ Add your credential data to the config:
 
 git config --global user.name “DietrichDB”
 
-git config --global user.email “dietrich@defaultroute.be"
+git config --global user.email “dietrich@defaultroute.be”
 
 git config --global credential.helper cache
