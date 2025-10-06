@@ -11,5 +11,9 @@ Key Generation on Windows:
 https://ubuntu.com/tutorials/ssh-keygen-on-windows#1-overview
 
 
-Importing the PRIVATE key to the linux vm (as client machine) - NEVER do this elsewhere unless this is explicitely your plan. (if not needed, create new keypair for the specific machine).
+Importing the PRIVATE key to the linux vm (as client machine) - NEVER do this elsewhere unless this is explicitely your plan. (if not needed, create new keypair for the specific machine):
+
+https://superuser.com/questions/1525973/how-to-import-private-ssh-key-to-new-client-machine
+
+
 
