@@ -1,0 +1,29 @@
+name: 3clos
+
+topology:
+  kinds:
+    nokia_srlinux:
+      image: ghcr.io/nokia/srlinux
+    linux:
+      image: ghcr.io/hellt/network-multitool
+  nodes:
+    leaf1:
+      kind: arista_eos
+      image: ceos:4.34.2F
+    leaf2:
+      kind: arista_eos
+      image: ceos:4.34.2F
+    spine:
+      kind: arista_eos
+      type: image: ceos:4.34.2F
+    client1:
+      kind: linux
+    client2:
+      kind: linux
+
+  links:
+    - endpoints: ["spine:eth1", "leaf1:eth1"]
+    - endpoints: ["spine:eth2", "leaf2:eth1"]
+    - endpoints: ["leaf1:eth2", "leaf2:eth2"]
+    - endpoints: ["leaf1:eth3", "client1:eth1"]
+    - endpoints: ["leaf2:eth3", "client2:eth1"]
