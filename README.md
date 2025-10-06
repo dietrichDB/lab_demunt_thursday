@@ -28,5 +28,3 @@ https://www.geeksforgeeks.org/git/how-to-save-username-and-password-in-git/
 
 Never save them unencrypted to disk;-)
 
-
-Good luck!
