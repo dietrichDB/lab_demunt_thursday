@@ -1,0 +1,57 @@
+! Startup-config last modified at Thu Sep  4 14:45:13 2025 by admin
+! device: switch2 (cEOSLab, EOS-4.34.2F-43232954.4342F.1 (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$.TnJg3zsdwoA4rQS$JJ3xi/2O0Q8nXsgPc4fVDytRAK.0yQMktYq69tC2jtwevdAeCZ/NfD6X2GaFbvR4B7GE5hMyCP7lmJgcoEW1m.
+!
+management api http-commands
+   no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname switch2
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vlan 10
+   name TECH
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Ethernet1
+   switchport access vlan 10
+!
+interface Management0
+   ip address 172.20.20.3/24
+   ipv6 address 3fff:172:20:20::3/64
+!
+interface Vlan10
+   ip address 192.168.0.101/24
+!
+no ip routing
+!
+ip route 0.0.0.0/0 172.20.20.1
+!
+ipv6 route ::/0 3fff:172:20:20::1
+!
+router multicast
+   ipv4
+      software-forwarding kernel
+   !
+   ipv6
+      software-forwarding kernel
+!
+end

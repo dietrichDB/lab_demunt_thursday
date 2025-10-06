@@ -1,0 +1,100 @@
+{
+  "name": "simple_lab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-5aa99782c264",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "mtu": 1500,
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "switch1": {
+      "index": "0",
+      "shortname": "switch1",
+      "longname": "clab-simple_lab-switch1",
+      "fqdn": "switch1.simple_lab.io",
+      "group": "",
+      "labdir": "/home/adm_dietrich/labo_demunt/clab-simple_lab/switch1",
+      "kind": "arista_ceos",
+      "image": "ceos:4.34.2F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:7e:62:04",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-5aa99782c264",
+        "clab-node-group": "",
+        "clab-node-kind": "arista_ceos",
+        "clab-node-lab-dir": "/home/adm_dietrich/labo_demunt/clab-simple_lab/switch1",
+        "clab-node-longname": "clab-simple_lab-switch1",
+        "clab-node-name": "switch1",
+        "clab-node-type": "",
+        "clab-owner": "adm_dietrich",
+        "clab-topo-file": "/home/adm_dietrich/labo_demunt/test.clab.yml",
+        "containerlab": "simple_lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "switch2": {
+      "index": "1",
+      "shortname": "switch2",
+      "longname": "clab-simple_lab-switch2",
+      "fqdn": "switch2.simple_lab.io",
+      "group": "",
+      "labdir": "/home/adm_dietrich/labo_demunt/clab-simple_lab/switch2",
+      "kind": "arista_ceos",
+      "image": "ceos:4.34.2F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:9c:25:07",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-5aa99782c264",
+        "clab-node-group": "",
+        "clab-node-kind": "arista_ceos",
+        "clab-node-lab-dir": "/home/adm_dietrich/labo_demunt/clab-simple_lab/switch2",
+        "clab-node-longname": "clab-simple_lab-switch2",
+        "clab-node-name": "switch2",
+        "clab-node-type": "",
+        "clab-owner": "adm_dietrich",
+        "clab-topo-file": "/home/adm_dietrich/labo_demunt/test.clab.yml",
+        "containerlab": "simple_lab"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "switch1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:d6:0d:21",
+        "peer": "z"
+      },
+      "z": {
+        "node": "switch2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:0a:9a:f5",
+        "peer": "a"
+      }
+    }
+  ]
+}

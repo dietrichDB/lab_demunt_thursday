@@ -1,0 +1,14 @@
+name: simple_lab
+
+topology:
+  nodes:
+    switch1:
+      kind: arista_ceos
+      image: ceos:4.34.2F
+    switch2:
+      kind: arista_ceos
+      image: ceos:4.34.2F
+
+  links:
+    - endpoints: ["switch1:eth1", "switch2:eth1"]
+
