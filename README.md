@@ -28,3 +28,24 @@ https://www.geeksforgeeks.org/git/how-to-save-username-and-password-in-git/
 
 Never save them unencrypted to disk;-)
 
+*** Authenticate fix with git ***
+
+manager-core (Windows and macOS) / osxkeychain (macOS) / libsecret (Linux)
+
+These helpers store credentials securely in the OS-specific credential storage.
+
+For Windows
+
+git config --global credential.helper manager-core
+
+For macOS:
+git config --global credential.helper osxkeychain
+
+For Linux:
+git config --global credential.helper libsecret
+
+Add your credential data to the config:
+
+git config --global user.name “DietrichDB”
+git config --global user.email “dietrich@defaultroute.be
+git config --global credential.helper cache
