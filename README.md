@@ -14,11 +14,17 @@ e. Verify online at your repository files have been added.
 
 After adding the remote repo, you can just do "git pull" to retrieve.
 
-git init (to make the folder a git repo
+git init (to make the folder a git repo)
 
 and after that
 
 git pull https://github.com/dietrichDB/lab_demunt_thursday.git master
 
 to pull its contents
+
+
+If you want to store credentials for your Github account, use a credential helper option:
+https://www.geeksforgeeks.org/git/how-to-save-username-and-password-in-git/
+
+Never save them unencrypted to disk;-)
 
