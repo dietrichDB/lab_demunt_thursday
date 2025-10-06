@@ -1,0 +1,75 @@
+name: l2ls-fabric
+mgmt:
+  network: OOB_MANAGEMENT
+  ipv4-subnet: 172.100.100.0/24
+topology:
+  kinds:
+    ceos:
+      image: ceos:4.34.2F  # adjust version/image as needed
+      kind: ceos
+  nodes:
+    # Spines
+    spine1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.101/24
+      image: ceos:4.33.4M
+      group: spine
+    spine2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.102/24
+      image: ceos:4.33.4M
+      group: spine
+    # Leafs
+    leaf1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.105/24
+      image: ceos:4.33.4M
+      group: spine
+    leaf2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.106/24
+      image: ceos:4.33.4M
+      group: spine
+    leaf3:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.107/24
+      image: ceos:4.33.4M
+      group: spine
+  leaf4:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.108/24
+      image: ceos:4.33.4M
+      group: spine
+    hostA:
+      kind: linux
+    hostB:
+      kind: linux
+    hostC:
+      kind: linux
+    hostD:
+      kind: linux
+    # Firewall / L3 device (optional)
+    firewall:
+      kind: linux
+  links:
+    # Spine‑Leaf interconnects (uplinks)
+    - endpoints: ["spine1:eth1", "leaf1:eth1"]
+    - endpoints: ["spine2:eth1", "leaf1:eth2"]
+    - endpoints: ["spine1:eth2", "leaf2:eth1"]
+    - endpoints: ["spine2:eth2", "leaf2:eth2"]
+    - endpoints: ["spine1:eth3", "leaf3:eth1"]
+    - endpoints: ["spine2:eth3", "leaf3:eth2"]
+    - endpoints: ["spine1:eth4", "leaf4:eth1"]
+    - endpoints: ["spine2:eth4", "leaf4:eth2"]
+
+    # Leaf to host (access links)
+    - endpoints: ["leaf1:eth3", "hostA:eth1"]
+    - endpoints: ["leaf2:eth3", "hostB:eth1"]
+    - endpoints: ["leaf3:eth3", "hostC:eth1"]
+    - endpoints: ["leaf4:eth3", "hostD:eth1"]
+
+    # Firewall links (trunk to both spines)
+    - endpoints: ["spine1:eth5", "firewall:eth1"]
+    - endpoints: ["spine2:eth5", "firewall:eth2"]
+
+
