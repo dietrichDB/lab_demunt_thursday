@@ -5,7 +5,7 @@ mgmt:
 topology:
   kinds:
     ceos:
-      image: ceos:4.34.2F  # adjust version/image as needed
+      image: ceos:4.34.3M  # adjust version/image as needed
       kind: ceos
     linux:
       image: ghcr.io/hellt/network-multitool
@@ -14,23 +14,23 @@ topology:
     spine1:
       kind: ceos
       mgmt-ipv4: 172.100.100.101
-      image: ceos:4.34.2F
+      image: ceos:4.34.3M
       group: spine
     spine2:
       kind: ceos
       mgmt-ipv4: 172.100.100.102
-      image: ceos:4.34.2F
+      image: ceos:4.34.3M
       group: spine
     # Leafs
     leaf1:
       kind: ceos
       mgmt-ipv4: 172.100.100.105
-      image: ceos:4.34.2F
+      image: ceos:4.34.3M
       group: spine
     leaf2:
       kind: ceos
       mgmt-ipv4: 172.100.100.106
-      image: ceos:4.34.2F
+      image: ceos:4.34.3M
       group: spine
     hostA:
       kind: linux
