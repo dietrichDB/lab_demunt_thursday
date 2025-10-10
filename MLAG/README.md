@@ -8,27 +8,6 @@ Topology
 
 Server(s) connected to the MLAG pair for active-active connectivity
 
-+------------+ +------------+
-
-| SPINE1 | | SPINE2 |
-
-+------------+ +------------+
-
-| |
-
-\-------+--------------------+-------
-
-| |
-
-+------------+ +------------+
-
-| LEAF1 |====| LEAF2 |
-
-+------------+ +------------+
-
-| |
-
-\[Server1\] \[Server2\]
 
 1\. Build your Containerlab Topology File first! (use the 3CLAB as an example but you need to modify it!!!)
 
