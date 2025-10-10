@@ -8,168 +8,246 @@ Topology
 
 Server(s) connected to the MLAG pair for active-active connectivity
 
-          +------------+      +------------+
-          |  SPINE1    |      |  SPINE2    |
-          +------------+      +------------+
-                |                    |
-         -------+--------------------+-------
-                |                    |
-          +------------+      +------------+
-          |  LEAF1     |====|  LEAF2     |
-          +------------+      +------------+
-                |                    |
-           [Server1]           [Server2]
++------------+ +------------+
 
+| SPINE1 | | SPINE2 |
 
++------------+ +------------+
 
+| |
 
-1. Build your Containerlab Topology File first! (use the 3CLAB as an example but you need to modify it!!!)
+\-------+--------------------+-------
 
+| |
 
-2. Basic interface IP and VLAN config
++------------+ +------------+
+
+| LEAF1 |====| LEAF2 |
+
++------------+ +------------+
+
+| |
+
+\[Server1\] \[Server2\]
+
+1\. Build your Containerlab Topology File first! (use the 3CLAB as an example but you need to modify it!!!)
+
+2\. Basic interface IP and VLAN config
 
 MLAG using peer link and keepalive
+
 Active-active LAG to downstream hosts
+
 SPINEs use Layer 3 underlay or static routes (simplified)
+
 BASE ASSUMPTIONS
 
+ElementValue
 
-Element	Value
+MLAG Domain10
 
+Peer LinkEthernet3
 
-MLAG Domain	10
+KeepaliveManagement1
 
-Peer Link	Ethernet3
+Server PortsEthernet1
 
-Keepalive	Management1
+SPINE LinksEthernet5 & Ethernet6
 
-Server Ports	Ethernet1
+VLAN ID10
 
-SPINE Links	Ethernet5 & Ethernet6
+VLAN NameServer\_VLAN
 
-VLAN ID	10
+SVI IP10.0.10.1/24 (VARP)
 
-VLAN Name	Server_VLAN
+Host IPsStatic or via DHCP
 
-SVI IP	10.0.10.1/24 (VARP)
+3\. LAB CONFIGS
 
-Host IPs	Static or via DHCP
-
-
-
-
-3. LAB CONFIGS
-
-
-*** SPINE1 & SPINE2 ***
-
+\*\*\* SPINE1 & SPINE2 \*\*\*
 
 !
+
 hostname SPINE1
+
 interface Ethernet1
-  no switchport
-  ip address 192.168.1.1/31
-!
-interface Ethernet2
-  no switchport
-  ip address 192.168.1.5/31
-!
-ip routing
+
+no switchport
+
+ip address 192.168.1.1/31
+
 !
 
+interface Ethernet2
+
+no switchport
+
+ip address 192.168.1.5/31
+
+!
+
+ip routing
+
+!
 
 (Repeat similarly on SPINE2 with IPs 192.168.1.3/31 and 192.168.1.7/31)
 
-
-*** LEAF1 CONFIG ***
-
+\*\*\* LEAF1 CONFIG \*\*\*
 
 hostname LEAF1
 
 !
+
 interface Management1
-  ip address 10.0.0.1/24
+
+ip address 10.0.0.1/24
+
 !
+
 interface Ethernet3
-  channel-group 100 mode active
+
+channel-group 100 mode active
+
 !
+
 interface Ethernet5
-  no switchport
-  ip address 192.168.1.0/31
+
+no switchport
+
+ip address 192.168.1.0/31
+
 !
+
 interface Ethernet6
-  no switchport
-  ip address 192.168.1.4/31
+
+no switchport
+
+ip address 192.168.1.4/31
+
 !
+
 interface Port-Channel100
-  switchport
-  switchport mode trunk
+
+switchport
+
+switchport mode trunk
+
 !
+
 interface Ethernet1
-  channel-group 1 mode active
+
+channel-group 1 mode active
+
 !
+
 interface Port-Channel1
-  switchport
-  switchport access vlan 10
+
+switchport
+
+switchport access vlan 10
+
 !
+
 vlan 10
-  name Server_VLAN
+
+name Server\_VLAN
+
 !
+
 interface Vlan10
-  ip address virtual 10.0.10.1/24
+
+ip address virtual 10.0.10.1/24
+
 !
+
 mlag configuration
-  domain-id 10
-  local-interface Vlan4094
-  peer-address 10.0.0.2
-  peer-link Port-Channel100
+
+domain-id 10
+
+local-interface Vlan4094
+
+peer-address 10.0.0.2
+
+peer-link Port-Channel100
+
 !
 
-
-
-
-
-*** LEAF2 CONFIG ***
+\*\*\* LEAF2 CONFIG \*\*\*
 
 hostname LEAF2
 
 !
+
 interface Management1
-  ip address 10.0.0.2/24
+
+ip address 10.0.0.2/24
+
 !
+
 interface Ethernet3
-  channel-group 100 mode active
+
+channel-group 100 mode active
+
 !
+
 interface Ethernet5
-  no switchport
-  ip address 192.168.1.2/31
+
+no switchport
+
+ip address 192.168.1.2/31
+
 !
+
 interface Ethernet6
-  no switchport
-  ip address 192.168.1.6/31
+
+no switchport
+
+ip address 192.168.1.6/31
+
 !
+
 interface Port-Channel100
-  switchport
-  switchport mode trunk
+
+switchport
+
+switchport mode trunk
+
 !
+
 interface Ethernet1
-  channel-group 1 mode active
+
+channel-group 1 mode active
+
 !
+
 interface Port-Channel1
-  switchport
-  switchport access vlan 10
+
+switchport
+
+switchport access vlan 10
+
 !
+
 vlan 10
-  name Server_VLAN
+
+name Server\_VLAN
+
 !
+
 interface Vlan10
-  ip address virtual 10.0.10.1/24
+
+ip address virtual 10.0.10.1/24
+
 !
+
 mlag configuration
-  domain-id 10
-  local-interface Vlan4094
-  peer-address 10.0.0.1
-  peer-link Port-Channel100
+
+domain-id 10
+
+local-interface Vlan4094
+
+peer-address 10.0.0.1
+
+peer-link Port-Channel100
+
 !
-
-
