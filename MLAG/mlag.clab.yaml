@@ -16,7 +16,7 @@ topology:
       image: ceos:4.34.2F
     spine2:
       kind: arista_ceos
-      image: ceos:4.34.2F	
+      image: ceos:4.34.2F
     client1:
       kind: linux
     client2:
@@ -25,9 +25,9 @@ topology:
   links:
     - endpoints: ["spine1:eth1", "leaf1:eth1"]
     - endpoints: ["spine1:eth2", "leaf2:eth1"]
-    - endpoints: ["spine2:eth1", "leaf1:eth2"]  
-    - endpoints: ["spine2:eth2", "leaf2:eth2"]  
+    - endpoints: ["spine2:eth1", "leaf1:eth2"]
+    - endpoints: ["spine2:eth2", "leaf2:eth2"]
     - endpoints: ["leaf1:eth3", "leaf2:eth3"]
-    - endpoints: ["leaf1:eth4", "leaf2:eth4"]   
-    - endpoints: ["leaf1:eth3", "client1:eth1"]
-    - endpoints: ["leaf2:eth3", "client2:eth1"]
+    - endpoints: ["leaf1:eth4", "leaf2:eth4"]
+    - endpoints: ["leaf1:eth5", "client1:eth1"]
+    - endpoints: ["leaf2:eth5", "client2:eth1"]

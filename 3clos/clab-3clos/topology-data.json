@@ -1,0 +1,272 @@
+{
+  "name": "3clos",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-796336c2b0b3",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDZfJMfDvHkb/KMkhHk5PI3VEpzj75WZGPOL2GqCwgwtBdztl2oLuuD7S9MykzsG4J5z2D645ZoqgNbTlly2IEN796PvtrH5OlmQNrotq+wcrQNNMBmRHvgkLCgTgOqVz5s85498Kyw04m1VFT0vTM8YRxVw0MquzJzZfvIkngELYYGCoJTD4pSS4/mtYAOmGtv3yve/kcysn668GzSUmXE5mM0ohWfbMPUqLIYHsMNaqRqX567XmWI6yt1fo3vgSHCEXomE4XkJvjjDrpDKIrE/WAP4AvTS19tuhhC/g6yeKIrm01xlrvjXvrisydLHx7MpWsygoCII+2Je2TPwLjQHVwC7rTA4rzeaM3iJOs9s0FVGj/fl/rDqTKqNmidJbC20R+TvCy1JzsmBxfGiU2Xq06S4MGyaqec3zPG44qhqd3LMALOAWlV0sDrF/C65sSuEmJEPg764P0/nwpKzqp4kQaTw5XvMse0tHsrQhSqfiYFNCuklhV/3G4tCxjxuqJ+VTd/6FJFXFczrNxieYFEzFbjLPAiDXMGQntg5aOV5mTHxPUYkSLrUM1Ign3t65kkLxYqAGMD27cbc/h9N11dmF+YA5O0xLMigFePxVR913efJRWF9b0x6+JTgV1e8XHv/T2auQvohivdmI9Ex3o4qPId98qCYBYj9KTL+6xd4w=="],
+  "nodes": {
+    "client1": {
+      "index": "0",
+      "shortname": "client1",
+      "longname": "clab-3clos-client1",
+      "fqdn": "client1.3clos.io",
+      "group": "",
+      "labdir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/client1",
+      "kind": "linux",
+      "image": "ghcr.io/hellt/network-multitool",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-796336c2b0b3",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/client1",
+        "clab-node-longname": "clab-3clos-client1",
+        "clab-node-name": "client1",
+        "clab-node-type": "",
+        "clab-owner": "dietrichd",
+        "clab-topo-file": "/home/dietrichd/demunt_lab/3clos/3clos.clab.yaml",
+        "containerlab": "3clos"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 80,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "client2": {
+      "index": "1",
+      "shortname": "client2",
+      "longname": "clab-3clos-client2",
+      "fqdn": "client2.3clos.io",
+      "group": "",
+      "labdir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/client2",
+      "kind": "linux",
+      "image": "ghcr.io/hellt/network-multitool",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-796336c2b0b3",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/client2",
+        "clab-node-longname": "clab-3clos-client2",
+        "clab-node-name": "client2",
+        "clab-node-type": "",
+        "clab-owner": "dietrichd",
+        "clab-topo-file": "/home/dietrichd/demunt_lab/3clos/3clos.clab.yaml",
+        "containerlab": "3clos"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 80,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "leaf1": {
+      "index": "2",
+      "shortname": "leaf1",
+      "longname": "clab-3clos-leaf1",
+      "fqdn": "leaf1.3clos.io",
+      "group": "",
+      "labdir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/leaf1",
+      "kind": "arista_ceos",
+      "image": "ceos:4.34.2F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:66:0f:2d",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-796336c2b0b3",
+        "clab-node-group": "",
+        "clab-node-kind": "arista_ceos",
+        "clab-node-lab-dir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/leaf1",
+        "clab-node-longname": "clab-3clos-leaf1",
+        "clab-node-name": "leaf1",
+        "clab-node-type": "",
+        "clab-owner": "dietrichd",
+        "clab-topo-file": "/home/dietrichd/demunt_lab/3clos/3clos.clab.yaml",
+        "containerlab": "3clos"
+      },
+      "port-bindings": [
+      ]
+    },
+    "leaf2": {
+      "index": "3",
+      "shortname": "leaf2",
+      "longname": "clab-3clos-leaf2",
+      "fqdn": "leaf2.3clos.io",
+      "group": "",
+      "labdir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/leaf2",
+      "kind": "arista_ceos",
+      "image": "ceos:4.34.2F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:04:96:ca",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-796336c2b0b3",
+        "clab-node-group": "",
+        "clab-node-kind": "arista_ceos",
+        "clab-node-lab-dir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/leaf2",
+        "clab-node-longname": "clab-3clos-leaf2",
+        "clab-node-name": "leaf2",
+        "clab-node-type": "",
+        "clab-owner": "dietrichd",
+        "clab-topo-file": "/home/dietrichd/demunt_lab/3clos/3clos.clab.yaml",
+        "containerlab": "3clos"
+      },
+      "port-bindings": [
+      ]
+    },
+    "spine": {
+      "index": "4",
+      "shortname": "spine",
+      "longname": "clab-3clos-spine",
+      "fqdn": "spine.3clos.io",
+      "group": "",
+      "labdir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/spine",
+      "kind": "arista_ceos",
+      "image": "ceos:4.34.2F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:03:a8:ab",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-796336c2b0b3",
+        "clab-node-group": "",
+        "clab-node-kind": "arista_ceos",
+        "clab-node-lab-dir": "/home/dietrichd/demunt_lab/3clos/clab-3clos/spine",
+        "clab-node-longname": "clab-3clos-spine",
+        "clab-node-name": "spine",
+        "clab-node-type": "",
+        "clab-owner": "dietrichd",
+        "clab-topo-file": "/home/dietrichd/demunt_lab/3clos/3clos.clab.yaml",
+        "containerlab": "3clos"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "spine",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:5a:6f:db",
+        "peer": "z"
+      },
+      "z": {
+        "node": "leaf1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:88:15:8c",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "spine",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:da:ea:a3",
+        "peer": "z"
+      },
+      "z": {
+        "node": "leaf2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:95:8c:f4",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "leaf1",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:1e:1d:65",
+        "peer": "z"
+      },
+      "z": {
+        "node": "leaf2",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:30:6e:08",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "leaf1",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:da:45:76",
+        "peer": "z"
+      },
+      "z": {
+        "node": "client1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:98:6c:3d",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "leaf2",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:37:61:a8",
+        "peer": "z"
+      },
+      "z": {
+        "node": "client2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:d4:69:94",
+        "peer": "a"
+      }
+    }
+  ]
+}

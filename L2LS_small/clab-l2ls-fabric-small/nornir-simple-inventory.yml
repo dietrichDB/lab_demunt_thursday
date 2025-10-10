@@ -1,0 +1,31 @@
+---
+leaf1:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.100.100.105
+leaf2:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.100.100.106
+spine1:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.100.100.101
+spine2:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.100.100.102
+hostA:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.100.100.3
+hostB:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.100.100.2
