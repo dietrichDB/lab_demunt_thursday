@@ -11,7 +11,7 @@ sudo tcpdump -i et1 -w /mnt/flash/eth1_capture.pcap
 
 Or capture all VLAN 10 traffic:
 
-sudo tcpdump -i et1 vlan 10 -w /mnt/flash/vlan10_traffic.pcap
+sudo tcpdump -i et1 -w /mnt/flash/vlan10_traffic.pcap
 
 4. Run a Test (from a host or another switch) e.g.
 
