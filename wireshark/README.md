@@ -1,4 +1,10 @@
 
+
+To copy from switch to your pc (or Linux VM):
+
+scp adm_demunt@10.1.0.1:et4_capture.pcap /Users/dietrichd
+
+
 *** Lab Objective: Start and export a pcap session on a switch in De Munt network ***
 
 
