@@ -69,7 +69,7 @@ vlan 10
 name Server_VLAN
 !
 interface Vlan1
-ip address virtual 10.0.10.1/24
+ip address 10.0.10.1/24
 !
 mlag configuration
 domain-id 10
@@ -115,7 +115,7 @@ vlan 10
 name Server_VLAN
 !
 interface Vlan10
-ip address virtual 10.0.10.1/24
+ip address  10.0.10.2/24
 !
 mlag configuration
 domain-id 10
