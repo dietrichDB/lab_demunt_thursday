@@ -23,9 +23,10 @@ Server(s) connected to the MLAG pair for active-active connectivity
 
 
 
+1. Build your Containerlab Topology File first! (use the 3CLAB as an example but you need to modify it!!!)
 
 
-Basic interface IP and VLAN config
+2. Basic interface IP and VLAN config
 
 MLAG using peer link and keepalive
 
@@ -48,7 +49,7 @@ SVI IP	10.0.10.1/24 (VARP)
 Host IPs	Static or via DHCP
 
 
-LAB CONFIGS
+3. LAB CONFIGS
 
 
 *** SPINE1 & SPINE2 ***
