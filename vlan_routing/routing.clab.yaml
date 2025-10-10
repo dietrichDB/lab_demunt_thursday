@@ -1,0 +1,26 @@
+name: routing
+
+topology:
+  kinds:
+    linux:
+      image: ghcr.io/hellt/network-multitool
+  nodes:
+    CORE1:
+      kind: arista_ceos
+      image: ceos:4.34.2F
+    ACCESS1:
+      kind: arista_ceos
+      image: ceos:4.34.2F
+    ACCESS2:
+      kind: arista_ceos
+      image: ceos:4.34.2F
+    HOSTA:
+      kind: linux
+    HOSTB:
+      kind: linux
+
+  links:
+    - endpoints: ["CORE1:eth1", "ACCESS1:eth1"]
+    - endpoints: ["CORE1:eth2", "ACCESS2:eth1"]
+    - endpoints: ["ACCESS1:eth2", "HOSTA:eth1"]
+    - endpoints: ["ACCESS2:eth2", "HOSTB:eth1"]
