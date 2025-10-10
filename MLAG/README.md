@@ -36,17 +36,29 @@ SPINEs use Layer 3 underlay or static routes (simplified)
 
 BASE ASSUMPTIONS
 
+
 Element	Value
 
+
 MLAG Domain	10
+
 Peer Link	Ethernet3
+
 Keepalive	Management1
+
 Server Ports	Ethernet1
+
 SPINE Links	Ethernet5 & Ethernet6
+
 VLAN ID	10
+
 VLAN Name	Server_VLAN
+
 SVI IP	10.0.10.1/24 (VARP)
+
 Host IPs	Static or via DHCP
+
+
 
 
 3. LAB CONFIGS
