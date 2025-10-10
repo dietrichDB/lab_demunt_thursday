@@ -29,11 +29,8 @@ Server(s) connected to the MLAG pair for active-active connectivity
 2. Basic interface IP and VLAN config
 
 MLAG using peer link and keepalive
-
 Active-active LAG to downstream hosts
-
 SPINEs use Layer 3 underlay or static routes (simplified)
-
 BASE ASSUMPTIONS
 
 
