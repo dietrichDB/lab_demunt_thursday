@@ -1,5 +1,12 @@
 Here you will find some interesting links & PDF's to work with during your labs. I might be updating this file during the labs so perform a Git Pull from time to time;-)
 
+Must read about why we are doing this network-as-a-code thing!
+
+The Case for Immutable Network Configuration
+
+https://medium.com/@rogerscuall/the-case-for-immutable-network-configuration-e8233f35d73c
+
+(but maybe later when you finished your lab;-)
 
 - https://arista.my.site.com/AristaCommunity/s/article/troubleshooting-multicast
 - https://ultahost.com/knowledge-base/install-python-3-ubuntu/?utm_campaign=pMax-German&gad_source=1&gad_campaignid=21806329190&gbraid=0AAAAApu1bbvcLc-pvlYbL_V9Z9WkMAd2Q&gclid=CjwKCAjwup3HBhAAEiwA7euZut1vxkHs9HqWvJ_pw80uDU0H9LQ2-6kSPIhmcj8fDwPzhhmFzKsKLBoCM2sQAvD_BwE
