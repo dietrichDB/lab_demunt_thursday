@@ -12,6 +12,10 @@ e. Verify online at your repository files have been added.
 
 2. Download something from git
 
+1. initialize the directory you want to use with "git init" command.
+2. Make a branch git branch -m master
+3. Download everything doing git pull "git pull https://github.com/dietrichDB/lab_demunt_thursday.git master"
+
 After adding the remote repo, you can just do "git pull" to retrieve.
 
 git init (to make the folder a git repo)
