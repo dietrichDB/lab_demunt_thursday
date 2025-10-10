@@ -1,0 +1,54 @@
+*** CORE1 (Layer 3 routing switch) ***
+
+hostname CORE1
+!
+interface Ethernet1
+description Uplink to ACCESS1
+switchport
+switchport mode trunk
+!
+interface Ethernet2
+description Uplink to ACCESS2
+switchport
+switchport mode trunk
+!
+vlan 10
+name Users
+!
+vlan 20
+name Servers
+!
+interface Vlan10
+ip address 192.168.10.1/24
+!
+interface Vlan20
+ip address 192.168.20.1/24
+!
+ip routing
+ACCESS1 (Access switch - VLAN 10)
+hostname ACCESS1
+!
+interface Ethernet1
+description Host A
+switchport access vlan 10
+!
+interface Ethernet2
+description Uplink to CORE1
+switchport mode trunk
+!
+vlan 10
+name Users
+ACCESS2 (Access switch - VLAN 20)
+hostname ACCESS2
+!
+interface Ethernet1
+description Host B
+switchport access vlan 20
+!
+interface Ethernet2
+description Uplink to CORE1
+switchport mode trunk
+!
+vlan 20
+name Servers
+
